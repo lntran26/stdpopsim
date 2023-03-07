@@ -9,7 +9,7 @@ _species = stdpopsim.get_species("HomSap")
 ###########################################################
 
 
-def _KimDFE():
+def _KimDFE(gamma_shape=0.186, gamma_scale=875):
     id = "Gamma_K17"
     description = "Deleterious Gamma DFE"
     long_description = """
@@ -31,8 +31,8 @@ def _KimDFE():
     ]
     neutral = stdpopsim.MutationType()
     Na = 12378
-    gamma_scale = 875
-    gamma_shape = 0.186  # shape
+    # gamma_scale = 875
+    # gamma_shape = 0.186  # shape
     gamma_mean = (-gamma_shape * gamma_scale * 2) / (2 * Na)  # expected value
     h = 0.5  # dominance coefficient
     negative = stdpopsim.MutationType(
